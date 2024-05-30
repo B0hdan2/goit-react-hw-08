@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
-import {
-  selectFilteredContacts,
-  selectLoading,
-} from "../../redux/contactsSlice.js";
+import { selectFilteredContacts } from "../../redux/contacts/slice.js";
+import { selectLoading } from "../../redux/contacts/selectors.js";
 
 import Contact from "../Contact/Contact.jsx";
 import s from "./ContactList.module.css";
@@ -10,6 +8,7 @@ import { BallTriangle } from "react-loader-spinner";
 
 function ContactList() {
   const filteredСontacts = useSelector(selectFilteredContacts);
+
   const loading = useSelector(selectLoading);
 
   return (
